@@ -86,7 +86,7 @@ No Canva. No Figma. No drag-and-drop. Just AI doing what designers do — but in
 | Layer | Tech |
 |-------|------|
 | **Frontend** | [React](https://react.dev) + [TypeScript](https://typescriptlang.org) + [Tailwind CSS](https://tailwindcss.com) + [Vite](https://vitejs.dev) |
-| **Backend** | [OCC Nexus](https://github.com/shadoprizm/openclaw) Infographic Pipeline (Python/FastAPI) |
+| **Backend** | Infographic Pipeline API (Python/FastAPI) |
 | **Auth** | [Clerk](https://clerk.com) |
 | **Payments** | [Stripe](https://stripe.com) |
 | **AI** | GPT Image 2 (creative) + HTML/SVG→PNG (data-precise) |
@@ -120,7 +120,7 @@ npm run build
 
 The app will be running at `http://localhost:5173`.
 
-> **Note:** The frontend connects to the OCC Nexus backend API at `http://192.168.0.86:8080/api/infographic` by default. To point it at your own backend, update the proxy target in `vite.config.ts`.
+> **Note:** The frontend requires a compatible backend API. The dev proxy in `vite.config.ts` can be pointed at any Infographic Pipeline API instance.
 
 ---
 
@@ -220,7 +220,7 @@ We love contributions! InfoGraphs is open source for a reason.
 └─────────────────┘     └──────────┬───────────────────┘
                                    │ /api/*
 ┌──────────────────────────────────▼───────────────────┐
-│   OCC Nexus Backend (FastAPI)                         │
+│   Infographic Pipeline API (FastAPI)                  │
 │   ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌────────┐ │
 │   │ Briefs   │ │ Pipeline │ │ Gallery  │ │Exports │ │
 │   │ Manager  │ │ Engine   │ │ Storage  │ │Service │ │
